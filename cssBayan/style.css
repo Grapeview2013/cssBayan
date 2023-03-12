@@ -20,20 +20,23 @@
     justify-content: center;
   }
 
-  .anim1,  .anim2,  .anim3,  .anim4{
-    
-  }
-  .accordion-content img{
+  .content img{
    margin-left: 20%;
+  }
+  .content:active {
+    filter:opacity(0.4);
+    transition: all 1s;
   }
   .accordion .icon{
     visibility: hidden;
 }
 .accordion:hover .icon{
     visibility: visible;
+    transition: all 1s;
 }
   .accordion:hover{
     color: rgb(23, 23, 219);
+    transition: all 1s;
   }
 
 
@@ -61,6 +64,7 @@
   
   .accordion-title:hover {
     background-color: #edeaea;
+    transition: all 1s;
   }
   
   .accordion-title h2 {
@@ -75,6 +79,7 @@
   
   .accordion-item:active .icon {
     transform: rotate(45deg);
+    transition: all 0.5s;
   }
   
   /* .accordion-content {
@@ -111,5 +116,56 @@
       font-size: 2.5rem;
     }
   }
-  
+
+
+
+
+
+  .hidecontent {
+    display: none;
+}
+
+.accordion label {
+  box-shadow:0 0 20px #d4d4d4;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 22px;
+  margin: 20px 0px 1px 0px;
+  cursor: pointer;
+  background: #5f75a4;
+  color: #FFF;
+  transition: ease .5s;
+  font-size: 2rem;
+}
+.accordion label:hover {
+  background: #5f75ff;
+}
+.content {
+  box-shadow:0 0 20px #d4d4d4;
+  background: #ffff;
+  padding: 10px 25px;
+  border: 1px solid #d4d4d4;
+  margin: -1 0 0 0;
+}
+.accordion input:checked + label + .content {
+  display: block;
+  webkit-animation: fadeIn 0.5s ease-out;
+  -moz-animation: fadeIn 0.5s ease-out;
+  -o-animation: fadeIn 0.5s ease-out;
+  animation: fadeIn 0.5s ease-out;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
   
